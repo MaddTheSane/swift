@@ -61,7 +61,7 @@ extension CTRun {
 }
 
 extension CTFont {
-		/// Return an ordered list of `CTFontDescriptor`s for font fallback derived from the system default fallback region according to the given language preferences. The style of the given is also matched as well as the weight and width of the font is not one of the system UI font, otherwise the UI font fallback is applied.
+	/// Return an ordered list of `CTFontDescriptor`s for font fallback derived from the system default fallback region according to the given language preferences. The style of the given is also matched as well as the weight and width of the font is not one of the system UI font, otherwise the UI font fallback is applied.
 	/// - parameter languagePrefList: The language preference list - ordered array of `String`s of ISO language codes.
 	/// - returns: The ordered list of fallback fonts - ordered array of `CTFontDescriptor`s.
 	@available(OSX 10.8, iOS 6.0, watchOS 2.0, tvOS 9.0, *)
@@ -69,7 +69,7 @@ extension CTFont {
 		return __defaultCascadeList(forLanguages: languagePrefList as NSArray?) as! [CTFontDescriptor]?
 	}
 	
-		/// Renders the given glyphs from the CTFont at the given positions in the CGContext.
+	/// Renders the given glyphs from the CTFont at the given positions in the CGContext.
 	///
 	/// This function will modify the `CGContext`'s font, text size, and text matrix if specified in the `Font`. These attributes will not be restored.
 	/// The given glyphs should be the result of proper Unicode text layout operations (such as `CTLine`). Results from `glyphs(for:)` (or similar APIs) do not perform any Unicode text layout.
@@ -78,9 +78,21 @@ extension CTFont {
 	public func draw(glyphsAndPositions gp: [(glyph: CGGlyph, position: CGPoint)], context: CGContext) {
 		let glyphs = gp.map({return $0.glyph})
 		let positions = gp.map({return $0.position})
-		CTFontDrawGlyphs(self, glyphs, positions, gp.count, context)
+		draw(glyphs: glyphs, positions: positions, count: gp.count, context: context)
 	}
 
+	/// Renders the given glyphs from the CTFont at the given positions in the CGContext.
+	///
+	/// This function will modify the `CGContext`'s font, text size, and text matrix if specified in the `Font`. These attributes will not be restored.
+	/// The given glyphs should be the result of proper Unicode text layout operations (such as `CTLine`). Results from `glyphs(for:)` (or similar APIs) do not perform any Unicode text layout.
+	/// - parameter context: `CGContext` used to render the glyphs.
+	/// - parameter glyphs: The glyphs to be rendered. See above discussion of how the glyphs should be derived.
+	/// - parameter positions: The positions (origins) for each glyph. The positions are in user space. The number of positions passed in must be equivalent to the number of glyphs.
+	public func draw(glyphs: [CGGlyph], positions: [CGPoint], context: CGContext) {
+		let gp = zip(glyphs, positions).map({return $0})
+		draw(glyphsAndPositions: gp, context: context)
+	}
+	
 	// - returns: This function returns a `CGFont` for the given font reference. Additional attributes from the font will be passed back as a font descriptor via the attributes parameter.
 	public var graphicsFont: (font: CGFont, attributes: CTFontDescriptor) {
 		var attribs: Unmanaged<CTFontDescriptor>? = nil

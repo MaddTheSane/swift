@@ -3,6 +3,7 @@ set(SWIFT_API_NOTES_INPUTS
   Dispatch
   ScriptingBridge
   os
+  CoreText
 )
 
 if(NOT DEFINED SWIFT_API_NOTES_PATH)

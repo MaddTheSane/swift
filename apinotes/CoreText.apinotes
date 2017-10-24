@@ -53,6 +53,12 @@ Functions:
 # CTFont
   - Name:            CTFontCreateWithName
     SwiftName:       'CTFont.init(name:size:matrix:)'
+  - Name:            CTFontCreateWithNameAndOptions
+    SwiftName:       'CTFont.init(name:size:matrix:options:)'
+  - Name:            CTFontCreateWithFontDescriptor
+    SwiftName:       'CTFont.init(descriptor:size:matrix:)'
+  - Name:            CTFontCreateWithFontDescriptorAndOptions
+    SwiftName:       'CTFont.init(descriptor:size:matrix:options:)'
   - Name:            CTFontCreateUIFontForLanguage
     SwiftName:       'CTFont.init(uiType:size:language:)'
   - Name:            CTFontCreateWithGraphicsFont
@@ -113,9 +119,10 @@ Functions:
   - Name:            CTFontGetXHeight
     SwiftName:       'getter:CTFont.xHeight(self:)'
 
-
   - Name:            CTFontGetGlyphWithName
     SwiftName:       'CTFont.glyph(self:named:)'
+  - Name:            CTFontDrawGlyphs
+    SwiftName:       'CTFont.draw(self:glyphs:positions:count:context:)'
 
   - Name:            CTFontCopyDefaultCascadeListForLanguages
     SwiftName:       'CTFont.__defaultCascadeList(self:forLanguages:)'
@@ -125,8 +132,61 @@ Functions:
 Enumerators:
 - Name: kCTUnderlinePatternSolid
   SwiftName: patternSolid
+- Name: kCTFontCopyrightNameKey
+  SwiftName: "CTFontNameKeys.copyright"
+- Name: kCTFontFamilyNameKey
+  SwiftName: "CTFontNameKeys.family"
+- Name: kCTFontSubFamilyNameKey
+  SwiftName: "CTFontNameKeys.subfamily"
+- Name: kCTFontStyleNameKey
+  SwiftName: "CTFontNameKeys.style"
+- Name: kCTFontUniqueNameKey
+  SwiftName: "CTFontNameKeys.unique"
+- Name: kCTFontFullNameKey
+  SwiftName: "CTFontNameKeys.fullName"
+- Name: kCTFontVersionNameKey
+  SwiftName: "CTFontNameKeys.version"
+- Name: kCTFontPostScriptNameKey
+  SwiftName: "CTFontNameKeys.postScript"
+- Name: kCTFontTrademarkNameKey
+  SwiftName: "CTFontNameKeys.trademark"
+- Name: kCTFontManufacturerNameKey
+  SwiftName: "CTFontNameKeys.manufacturer"
+- Name: kCTFontDesignerNameKey
+  SwiftName: "CTFontNameKeys.designer"
+- Name: kCTFontDescriptionNameKey
+  SwiftName: "CTFontNameKeys.descriptionName"
+- Name: kCTFontVendorURLNameKey
+  SwiftName: "CTFontNameKeys.vendorURL"
+- Name: kCTFontDesignerURLNameKey
+  SwiftName: "CTFontNameKeys.designer"
+- Name: kCTFontLicenseNameKey
+  SwiftName: "CTFontNameKeys.license"
+- Name: kCTFontLicenseURLNameKey
+  SwiftName: "CTFontNameKeys.licenseURL"
+- Name: kCTFontSampleTextNameKey
+  SwiftName: "CTFontNameKeys.sampleText"
+- Name: kCTFontPostScriptCIDNameKey
+  SwiftName: "CTFontNameKeys.postScriptCID"
+  
+- Name: kCTBaselineClassRoman
+  SwiftName: "CTBaselineClasses.roman"
+- Name: kCTBaselineClassIdeographicCentered
+  SwiftName: "CTBaselineClasses.ideographicCentered"
+- Name: kCTBaselineClassIdeographicLow
+  SwiftName: "CTBaselineClasses.ideographicLow"
+- Name: kCTBaselineClassIdeographicHigh
+  SwiftName: "CTBaselineClasses.ideographicHigh"
+- Name: kCTBaselineClassHanging
+  SwiftName: "CTBaselineClasses.hanging"
+- Name: kCTBaselineClassMathKey
+  SwiftName: "CTBaselineClasses.math"
+
 SwiftVersions:
 - Version: 3
+  Enumerators:
+  - Name: kCTUnderlinePatternSolid
+    SwiftName: patternSolid
   Functions:
   - Name: CTFontCreateWithName
     Parameters:
