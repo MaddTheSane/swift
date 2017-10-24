@@ -69,6 +69,10 @@ Functions:
     SwiftName:       'CTFont.__graphicsFont(self:_:)'
     SwiftPrivate:    true
 
+  - Name:            CTFontGetBoundingRectsForGlyphs
+    SwiftName:       'CTFont.__boundingRects(self:orientation:glyphs:boundingRects:count:)'
+    SwiftPrivate:    true
+    
   - Name:            CTFontCopyFontDescriptor
     SwiftName:       'getter:CTFont.fontDescriptor(self:)'
   - Name:            CTFontGetSize
@@ -79,21 +83,29 @@ Functions:
 
   - Name:            CTFontCopyPostScriptName
     SwiftName:       'getter:CTFont.postScriptName(self:)'
+    ResultType:      "NSString * _Nonnull "
   - Name:            CTFontCopyFamilyName
     SwiftName:       'getter:CTFont.familyName(self:)'
+    ResultType:      "NSString * _Nonnull "
   - Name:            CTFontCopyFullName
     SwiftName:       'getter:CTFont.fullName(self:)'
+    ResultType:      "NSString * _Nonnull "
   - Name:            CTFontCopyDisplayName
     SwiftName:       'getter:CTFont.displayName(self:)'
+    ResultType:      "NSString * _Nonnull "
   - Name:            CTFontCopyName
     SwiftName:       'CTFont.name(self:ofKey:)'
+    ResultType:      "NSString *"
 
   - Name:            CTFontCopyCharacterSet
     SwiftName:       'getter:CTFont.characterSet(self:)'
+    ResultType:      "NSCharacterSet *"
   - Name:            CTFontGetStringEncoding
-    SwiftName:       'getter:CTFont.stringEncoding(self:)'
+    SwiftName:       'getter:CTFont.__stringEncoding(self:)'
+    SwiftPrivate:    true
   - Name:            CTFontCopySupportedLanguages
     SwiftName:       'getter:CTFont.__supportedLangages(self:)'
+    ResultType:      "NSArray *"
     SwiftPrivate:    true
 
   - Name:            CTFontGetAscent
@@ -149,6 +161,7 @@ Functions:
     SwiftName:       'CTFontCollection.attribute(self:named:options:)'
   - Name:            CTFontCollectionCopyFontAttributes
     SwiftName:       'CTFontCollection.attributes(self:named:options:)'
+    ResultType: "NSArray *"
 
 # ctfontmanager 
 

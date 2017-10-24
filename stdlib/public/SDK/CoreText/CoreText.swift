@@ -69,6 +69,25 @@ extension CTFont {
 		return __defaultCascadeList(forLanguages: languagePrefList as NSArray?) as! [CTFontDescriptor]?
 	}
 	
+	/// The best string encoding for legacy format support.
+	public var stringEncoding: String.Encoding {
+		let cfStrEnc = __stringEncoding
+		let nsEnc = CFStringConvertEncodingToNSStringEncoding(cfStrEnc)
+		return String.Encoding(rawValue: nsEnc)
+	}
+	
+	
+	/// Calculates the bounding rects for an array of glyphs and returns the overall bounding rect for the run.
+	/// - parameter orientation: The intended drawing orientation of the glyphs. Used to determined which glyph metrics to return.
+	/// - parameter glyphs: An array of glyphs.
+	/// - returns: This function returns the overall bounding rectangle for an array or run of glyphs, returned in the `.all` part of the returned tuple. The bounding rects of the individual glyphs are returned through the `.perGlyph` part of the returned tuple. These are the design metrics from the font transformed in font space.
+	public func boundingRects(forGlyphs glyphs: [CGGlyph], orientation: CTFontOrientation = .`default`) -> (all: CGRect, perGlyph: [CGRect]) {
+		var bounds = [CGRect](repeating: CGRect(), count: glyphs.count)
+		let finalRect = __boundingRects(orientation: orientation, glyphs: glyphs, boundingRects: &bounds, count: glyphs.count)
+		return (finalRect, bounds)
+	}
+
+	
 	/// Renders the given glyphs from the CTFont at the given positions in the CGContext.
 	///
 	/// This function will modify the `CGContext`'s font, text size, and text matrix if specified in the `Font`. These attributes will not be restored.
