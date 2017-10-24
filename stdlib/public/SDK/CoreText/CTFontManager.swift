@@ -204,6 +204,6 @@ public struct CTFontManager {
 	/// iOS clients should register as an observer of the notification with the local notification center for all changes.
 	@available(OSX 10.6, iOS 7.0, watchOS 2.0, tvOS 9.0, *)
 	public static var registeredFontsChanged: Notification.Name {
-		return Notification.Name(kCTFontManagerRegisteredFontsChangedNotification as String)
+		return Notification.Name(__CTFontManagerRegisteredFontsChangedNotification as String)
 	}
 }

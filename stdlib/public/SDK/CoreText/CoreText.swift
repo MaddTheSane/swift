@@ -123,3 +123,17 @@ extension CTFont {
 		return __supportedLangages as! [String]
 	}
 }
+
+extension CTTypesetter {
+	public func line(range: CFRange, offset: Double = 0.0) -> Int {
+		return __line(range, offset)
+	}
+	
+	public func suggestLineBreak(index: CFIndex, width: Double, offset: Double = 0.0) -> Int {
+		return __suggestLineBreak(index, width, offset)
+	}
+	
+	public func suggestClusterBreak(index: CFIndex, width: Double, offset: Double = 0.0) -> Int {
+		return __suggestClusterBreak(index, width, offset)
+	}
+}
