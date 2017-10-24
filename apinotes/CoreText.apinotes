@@ -1,0 +1,189 @@
+---
+Name: CoreText
+Functions:       
+
+# CTRun
+
+  - Name:            CTRunDraw
+    SwiftName:       'CTRun.draw(self:context:range:)'
+
+  - Name:            CTRunGetTextMatrix
+    SwiftName:       'getter:CTRun.textMatrix(self:)'
+
+  - Name:            CTRunGetImageBounds
+    SwiftName:       'CTRun.imageBounds(self:context:range:)'
+
+  - Name:            CTRunGetGlyphCount
+    SwiftName:       'getter:CTRun.glyphCount(self:)'
+
+  - Name:            CTRunGetAttributes
+    SwiftName:       'getter:CTRun.attributes(self:)'
+  - Name:            CTRunGetStatus
+    SwiftName:       'getter:CTRun.status(self:)'
+  - Name:            CTRunGetGlyphsPtr
+    SwiftName:       'getter:CTRun.__glyphsPtr(self:)'
+    SwiftPrivate:    true
+  - Name:            CTRunGetGlyphs
+    SwiftName:       'CTRun.__getGlyphs(self:range:buffer:)'
+    SwiftPrivate:    true
+  - Name:            CTRunGetPositionsPtr
+    SwiftName:       'getter:CTRun.__positionsPtr(self:)'
+    SwiftPrivate:    true
+  - Name:            CTRunGetPositions
+    SwiftName:       'CTRun.__getPositions(self:range:buffer:)'
+    SwiftPrivate:    true
+  - Name:            CTRunGetAdvancesPtr
+    SwiftName:       'getter:CTRun.__advancesPtr(self:)'
+    SwiftPrivate:    true
+  - Name:            CTRunGetAdvances
+    SwiftName:       'CTRun.__getAdvances(self:range:buffer:)'
+    SwiftPrivate:    true
+  - Name:            CTRunGetStringIndicesPtr
+    SwiftName:       'getter:CTRun.__stringIndicesPtr(self:)'
+    SwiftPrivate:    true
+  - Name:            CTRunGetStringIndices
+    SwiftName:       'CTRun.__getStringIndices(self:range:buffer:)'
+    SwiftPrivate:    true
+  - Name:            CTRunGetStringRange
+    SwiftName:       'getter:CTRun.stringRange(self:)'
+  - Name:            CTRunGetTypographicBounds
+    SwiftName:       'CTRun.__getTypographicBounds(self:range:ascent:descent:leading:)'
+    SwiftPrivate:    true
+
+# CTFont
+  - Name:            CTFontCreateWithName
+    SwiftName:       'CTFont.init(name:size:matrix:)'
+  - Name:            CTFontCreateUIFontForLanguage
+    SwiftName:       'CTFont.init(uiType:size:language:)'
+  - Name:            CTFontCreateWithGraphicsFont
+    SwiftName:       'CTFont.init(withGraphicsFont:size:matrix:attributes:)'
+
+
+  - Name:            CTFontCopyGraphicsFont
+    SwiftName:       'CTFont.__graphicsFont(self:_:)'
+    SwiftPrivate:    true
+
+  - Name:            CTFontCopyFontDescriptor
+    SwiftName:       'getter:CTFont.fontDescriptor(self:)'
+  - Name:            CTFontGetSize
+    SwiftName:       'getter:CTFont.size(self:)'
+  - Name:            CTFontGetMatrix
+    SwiftName:       'getter:CTFont.matrix(self:)'
+
+
+  - Name:            CTFontCopyPostScriptName
+    SwiftName:       'getter:CTFont.postScriptName(self:)'
+  - Name:            CTFontCopyFamilyName
+    SwiftName:       'getter:CTFont.familyName(self:)'
+  - Name:            CTFontCopyFullName
+    SwiftName:       'getter:CTFont.fullName(self:)'
+  - Name:            CTFontCopyDisplayName
+    SwiftName:       'getter:CTFont.displayName(self:)'
+  - Name:            CTFontCopyName
+    SwiftName:       'CTFont.name(self:ofKey:)'
+
+  - Name:            CTFontCopyCharacterSet
+    SwiftName:       'getter:CTFont.characterSet(self:)'
+  - Name:            CTFontGetStringEncoding
+    SwiftName:       'getter:CTFont.stringEncoding(self:)'
+  - Name:            CTFontCopySupportedLanguages
+    SwiftName:       'getter:CTFont.__supportedLangages(self:)'
+    SwiftPrivate:    true
+
+  - Name:            CTFontGetAscent
+    SwiftName:       'getter:CTFont.ascent(self:)'
+  - Name:            CTFontGetDescent
+    SwiftName:       'getter:CTFont.descent(self:)'
+  - Name:            CTFontGetLeading
+    SwiftName:       'getter:CTFont.leading(self:)'
+  - Name:            CTFontGetUnitsPerEm
+    SwiftName:       'getter:CTFont.unitsPerEm(self:)'
+  - Name:            CTFontGetGlyphCount
+    SwiftName:       'getter:CTFont.countOfGlyphs(self:)'
+  - Name:            CTFontGetBoundingBox
+    SwiftName:       'getter:CTFont.boundingBox(self:)'
+  - Name:            CTFontGetUnderlinePosition
+    SwiftName:       'getter:CTFont.underlinePosition(self:)'
+  - Name:            CTFontGetUnderlineThickness
+    SwiftName:       'getter:CTFont.underlineThickness(self:)'
+  - Name:            CTFontGetSlantAngle
+    SwiftName:       'getter:CTFont.slantAngle(self:)'
+  - Name:            CTFontGetCapHeight
+    SwiftName:       'getter:CTFont.capHeight(self:)'
+  - Name:            CTFontGetXHeight
+    SwiftName:       'getter:CTFont.xHeight(self:)'
+
+
+  - Name:            CTFontGetGlyphWithName
+    SwiftName:       'CTFont.glyph(self:named:)'
+
+  - Name:            CTFontCopyDefaultCascadeListForLanguages
+    SwiftName:       'CTFont.__defaultCascadeList(self:forLanguages:)'
+    SwiftPrivate:    true
+
+
+Enumerators:
+- Name: kCTUnderlinePatternSolid
+  SwiftName: patternSolid
+SwiftVersions:
+- Version: 3
+  Functions:
+  - Name: CTFontCreateWithName
+    Parameters:
+    - Position: 0
+      Nullability: O
+  - Name: CTFontDrawGlyphs
+    Parameters:
+    - Position: 1
+      Nullability: U
+    - Position: 2
+      Nullability: U
+  - Name: CTFontGetAdvancesForGlyphs
+    Parameters:
+    - Position: 2
+      Nullability: U
+  - Name: CTFontGetBoundingRectsForGlyphs
+    Parameters:
+    - Position: 2
+      Nullability: U
+  - Name: CTFontGetGlyphsForCharacters
+    Parameters:
+    - Position: 1
+      Nullability: U
+    - Position: 2
+      Nullability: U
+  - Name: CTFontGetOpticalBoundsForGlyphs
+    Parameters:
+    - Position: 1
+      Nullability: U
+  - Name: CTFontGetVerticalTranslationsForGlyphs
+    Parameters:
+    - Position: 1
+      Nullability: U
+    - Position: 2
+      Nullability: U
+  - Name: CTFrameGetLineOrigins
+    Parameters:
+    - Position: 2
+      Nullability: U
+  - Name: CTRubyAnnotationCreate
+    Parameters:
+    - Position: 3
+      Type: "CFStringRef _Nonnull * _Null_unspecified"
+  - Name: CTRunGetAdvances
+    Parameters:
+    - Position: 2
+      Nullability: U
+  - Name: CTRunGetGlyphs
+    Parameters:
+    - Position: 2
+      Nullability: U
+  - Name: CTRunGetPositions
+    Parameters:
+    - Position: 2
+      Nullability: U
+  - Name: CTRunGetStringIndices
+    Parameters:
+    - Position: 2
+      Nullability: U
+
