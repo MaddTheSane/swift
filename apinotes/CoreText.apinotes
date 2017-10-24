@@ -128,6 +128,48 @@ Functions:
     SwiftName:       'CTFont.__defaultCascadeList(self:forLanguages:)'
     SwiftPrivate:    true
 
+# CTFontCollection
+
+  - Name:            CTFontCollectionSetExclusionDescriptors
+    SwiftName:       'setter:CTFontCollection.exclusionDescriptors(self:_:)'
+  - Name:            CTFontCollectionCopyExclusionDescriptors
+    SwiftName:       'getter:CTFontCollection.exclusionDescriptors(self:)'
+  - Name:            CTFontCollectionSetQueryDescriptors
+    SwiftName:       'setter:CTFontCollection.queryDescriptors(self:_:)'
+  - Name:            CTFontCollectionCopyQueryDescriptors
+    SwiftName:       'getter:CTFontCollection.queryDescriptors(self:)'
+
+  - Name:            CTFontCollectionCreateWithFontDescriptors
+    SwiftName:       'CTFontCollection.init(queryDescriptors:options:)'
+  - Name:            CTFontCollectionCreateFromAvailableFonts
+    SwiftName:       'CTFontCollection.init(withAvailableFontsAndOptions:)'
+
+
+  - Name:            CTFontCollectionCopyFontAttribute
+    SwiftName:       'CTFontCollection.attribute(self:named:options:)'
+  - Name:            CTFontCollectionCopyFontAttributes
+    SwiftName:       'CTFontCollection.attributes(self:named:options:)'
+
+# ctfontmanager 
+
+  - Name:            CTFontManagerCopyAvailablePostScriptNames
+    SwiftName:       '__CTFontManagerAvailablePostScriptNames()'
+    SwiftPrivate:    true
+  - Name:            CTFontManagerCopyAvailableFontFamilyNames
+    SwiftName:       '__CTFontManagerAvailableFontFamilyNames()'
+    SwiftPrivate:    true
+  - Name:            CTFontManagerCopyAvailableFontURLs
+    SwiftName:       '__CTFontManagerAvailableFontURLs()'
+    SwiftPrivate:    true
+  - Name:            CTFontManagerCreateFontDescriptorsFromURL
+    SwiftName:       '__CTFontManagerFontDescriptors(from:)'
+    SwiftPrivate:    true
+  - Name:            CTFontManagerCreateFontDescriptorFromData
+    SwiftName:       '__CTFontManagerFontDescriptor(from:)'
+    SwiftPrivate:    true
+  - Name:            CTFontManagerUnregisterFontsForURL
+    SwiftName:       "__CTFontManagerUnregsiterFonts(from:scope:error:)"
+    SwiftPrivate:    true
 
 Enumerators:
 - Name: kCTUnderlinePatternSolid
@@ -181,6 +223,15 @@ Enumerators:
   SwiftName: "CTBaselineClasses.hanging"
 - Name: kCTBaselineClassMathKey
   SwiftName: "CTBaselineClasses.math"
+
+- Name: kCTFontCollectionRemoveDuplicatesOption
+  SwiftName: "CTFontCollectionOption.removeDuplicates"
+- Name: kCTFontCollectionIncludeDisabledFontsOption
+  SwiftName: "CTFontCollectionOption.includeDisabled"
+- Name: kCTFontCollectionDisallowAutoActivationOption
+  SwiftName: "CTFontCollectionOption.disallowAutoActivation"
+
+
 
 SwiftVersions:
 - Version: 3

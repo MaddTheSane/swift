@@ -17,8 +17,8 @@ extension CTRun {
 		if let preAdv = __advancesPtr {
 			return AnySequence(UnsafeBufferPointer(start: preAdv, count: glyphCount))
 		} else {
-			let preArr = [CGSize](repeating: CGSize(), count: glyphCount)
-			__getAdvances(range: CFRangeMake(0, 0), &preArr)
+			var preArr = [CGSize](repeating: CGSize(), count: glyphCount)
+			__getAdvances(range: CFRangeMake(0, 0), buffer: &preArr)
 			return AnySequence(preArr)
 		}
 	}
@@ -33,8 +33,8 @@ extension CTRun {
 		if let preGlyph = __glyphsPtr {
 			return AnySequence(UnsafeBufferPointer(start: preGlyph, count: glyphCount))
 		} else {
-			let preArr = [CGGlyph](repeating: 0, count: glyphCount)
-			__getGlyphs(range: CFRangeMake(0, 0), &preArr)
+			var preArr = [CGGlyph](repeating: 0, count: glyphCount)
+			__getGlyphs(range: CFRangeMake(0, 0), buffer: &preArr)
 			return AnySequence(preArr)
 		}
 	}
@@ -43,8 +43,8 @@ extension CTRun {
 		if let preGlyph = __positionsPtr {
 			return AnySequence(UnsafeBufferPointer(start: preGlyph, count: glyphCount))
 		} else {
-			let preArr = [CGGlyph](repeating: CGPoint(), count: glyphCount)
-			__getPositions(range: CFRangeMake(0, 0), &preArr)
+			var preArr = [CGPoint](repeating: CGPoint(), count: glyphCount)
+			__getPositions(range: CFRangeMake(0, 0), buffer: &preArr)
 			return AnySequence(preArr)
 		}
 	}
@@ -53,8 +53,8 @@ extension CTRun {
 		if let preGlyph = __stringIndicesPtr {
 			return AnySequence(UnsafeBufferPointer(start: preGlyph, count: glyphCount))
 		} else {
-			let preArr = [CGGlyph](repeating: 0, count: glyphCount)
-			__getStringIndices(range: CFRangeMake(0, 0), &preArr)
+			var preArr = [CFIndex](repeating: 0, count: glyphCount)
+			__getStringIndices(range: CFRangeMake(0, 0), buffer: &preArr)
 			return AnySequence(preArr)
 		}
 	}
